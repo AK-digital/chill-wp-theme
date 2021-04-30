@@ -7,9 +7,9 @@
  * @package Chillax
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CHILLAXVERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CHILLAXVERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'chillax_setup' ) ) :
@@ -140,10 +140,10 @@ add_action( 'widgets_init', 'chillax_widgets_init' );
  * Enqueue scripts and styles.
  */
 function chillax_scripts() {
-	wp_enqueue_style( 'chillax-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'chillax-style', get_stylesheet_uri(), array(), CHILLAXVERSION );
 	wp_style_add_data( 'chillax-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'chillax-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'chillax-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CHILLAXVERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
